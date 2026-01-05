@@ -57,7 +57,7 @@ const useUser = () => useContext(UserContext);
 // ============================================
 const productCategories = {
   shirts: { name: 'Custom Shirts', basePrice: 49.99 },
-  suits: { name: 'Custom Suits', basePrice: 239 },
+  kurta: { name: 'Anarkali Kurti', basePrice: 89.99 },
   jackets: { name: 'Custom Jackets', basePrice: 169 },
   pants: { name: 'Custom Pants', basePrice: 74 },
 };
@@ -231,6 +231,75 @@ const styleOptions = {
   ],
 };
 
+// Anarkali Kurti style categories
+const kurtaStyleCategories = [
+  { id: 'neckFront', name: 'Neck Front' },
+  { id: 'neckBack', name: 'Neck Back' },
+  { id: 'sleeve', name: 'Sleeve' },
+  { id: 'bottom', name: 'Length' },
+];
+
+// Anarkali Kurti style options - mapped to actual mesh names
+const kurtaStyleOptions = {
+  neckFront: [
+    { id: 'nf1', name: 'Round Neck', meshName: 'Neck_Front_Round', price: 0 },
+    { id: 'nf2', name: 'V-Neck', meshName: 'Neck_front_V', price: 0 },
+    { id: 'nf3', name: 'U-Neck', meshName: 'Neck_front_U', price: 0 },
+    { id: 'nf4', name: 'Square Neck', meshName: 'Neck_front_square', price: 0 },
+    { id: 'nf5', name: 'Scoop Neck', meshName: 'neck_front_scoop', price: 0 },
+    { id: 'nf6', name: 'Boat Neck', meshName: 'Neck_front_boat', price: 0 },
+    { id: 'nf7', name: 'Sweetheart', meshName: 'Neck_front_sweetheart', price: 5 },
+    { id: 'nf8', name: 'V-Notch', meshName: 'Neck_front_V_notch', price: 0 },
+    { id: 'nf9', name: 'Crew Neck', meshName: 'Neck_crew', price: 0 },
+    { id: 'nf10', name: 'Halter Style 1', meshName: 'Neck_halter_1', price: 5 },
+    { id: 'nf11', name: 'Halter Style 2', meshName: 'Neck_halter_2', price: 5 },
+    { id: 'nf12', name: 'High Neck', meshName: 'Neck_high', price: 5 },
+  ],
+  neckBack: [
+    { id: 'nb1', name: 'Basic Back', meshName: 'Neck_back_basic', price: 0 },
+    { id: 'nb2', name: 'Round Back', meshName: 'Neck_back_round', price: 0 },
+    { id: 'nb3', name: 'V-Back', meshName: 'neck_back_v', price: 0 },
+    { id: 'nb4', name: 'U-Back', meshName: 'neck_back_u', price: 0 },
+    { id: 'nb5', name: 'Square Back', meshName: 'neck_back_square', price: 0 },
+    { id: 'nb6', name: 'Rectangle Back', meshName: 'Neck_back_Rectangle', price: 0 },
+    { id: 'nb7', name: 'Boat Back', meshName: 'Neck_back_boat', price: 0 },
+    { id: 'nb8', name: 'Deep Round', meshName: 'neck_back_deep_round', price: 5 },
+    { id: 'nb9', name: 'Keyhole', meshName: 'neck_back_keyhole', price: 5 },
+  ],
+  sleeve: [
+    { id: 'sl1', name: 'Short Basic', meshName: 'sleeve_basic_short', price: 0 },
+    { id: 'sl2', name: 'Above Elbow', meshName: 'sleeve_basic_above_elbow', price: 0 },
+    { id: 'sl3', name: 'Mid Length', meshName: 'sleeve_basic_midlength', price: 0 },
+    { id: 'sl4', name: '3/4 Length', meshName: 'sleeve_basic_3quater', price: 0 },
+    { id: 'sl5', name: 'Full Length', meshName: 'sleeve_basic_full', price: 0 },
+    { id: 'sl6', name: 'Puff Short', meshName: 'sleeve_puff_Short', price: 5 },
+    { id: 'sl7', name: 'Puff Above Elbow', meshName: 'sleeve_puff_above_elbow', price: 5 },
+    { id: 'sl8', name: 'Bell 3/4', meshName: 'sleeve_bell_3-4', price: 5 },
+    { id: 'sl9', name: 'Bell Full', meshName: 'sleeve_bell_full', price: 5 },
+    { id: 'sl10', name: 'Butterfly', meshName: 'sleeve_butterfly', price: 10 },
+    { id: 'sl11', name: 'Cape Long', meshName: 'sleeve_cape_long', price: 10 },
+    { id: 'sl12', name: 'Flounce', meshName: 'sleeve_flounce', price: 5 },
+    { id: 'sl13', name: 'Lantern', meshName: 'sleeve_lantern', price: 5 },
+    { id: 'sl14', name: 'Bishop 3/4', meshName: 'sleeve_bishop_3_4th', price: 5 },
+    { id: 'sl15', name: 'Bishop Long', meshName: 'sleeve_bishop_long', price: 5 },
+    { id: 'sl16', name: 'Cap Short', meshName: 'sleeve_cap_short', price: 0 },
+    { id: 'sl17', name: 'Flutter Short', meshName: 'sleeve_flutter_short', price: 5 },
+    { id: 'sl18', name: 'Flutter Above Elbow', meshName: 'sleeve_flutter_above_elbow', price: 5 },
+    { id: 'sl19', name: 'Balloon 3/4', meshName: 'sleeve_ballon_3_4th', price: 5 },
+    { id: 'sl20', name: 'Balloon Long', meshName: 'sleeve_ballon_long', price: 5 },
+  ],
+  bottom: [
+    { id: 'bt1', name: 'Short', meshName: 'Bottom_short', price: 0 },
+    { id: 'bt2', name: 'Knee Length', meshName: 'Bottom_knee', price: 0 },
+    { id: 'bt3', name: '3/4 Length', meshName: 'bottom_3_4', price: 0 },
+    { id: 'bt4', name: 'Ankle Length', meshName: 'bottom_ankle', price: 5 },
+    { id: 'bt5', name: 'Floor Length', meshName: 'bottom_floor', price: 10 },
+    { id: 'bt6', name: '3/4 High-Low', meshName: 'bottom_3_4_high_low', price: 5 },
+    { id: 'bt7', name: 'Ankle High-Low', meshName: 'bottom_ankle_high_low', price: 10 },
+    { id: 'bt8', name: 'Floor High-Low', meshName: 'bottom_floor_high_low', price: 15 },
+  ],
+};
+
 const extraOptions = {
   sleeve: [{ id: 'ep', name: 'Epaulettes', price: 5 }],
   front: [{ id: 'seams', name: 'Seams', price: 5 }],
@@ -394,6 +463,13 @@ function createCheckeredTexture(colors, size = 64, repeatScale = 4) {
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.repeat.set(repeatScale, repeatScale); // Part-specific repeat scale
+
+  // FIXED: Improved texture filtering for smoother pattern rendering
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.generateMipmaps = true;
+  texture.anisotropy = 16;
+
   texture.needsUpdate = true;
   return texture;
 }
@@ -402,11 +478,12 @@ function createCheckeredTexture(colors, size = 64, repeatScale = 4) {
 // Calibrated based on UV mapping differences - higher value = smaller squares
 const PATTERN_REPEAT_SCALES = {
   body: 4,      // Body baseline - perfect
-  sleeve: 7,    // Perfect - matches body
-  collar: 2.5,  // Perfect - matches body
-  cuff: 1.8,    // Decreased for larger squares
-  pocket: 4,    // Same as body
-  placket: 4    // Same as body
+  sleeve: 3.5,  // Reduced from 6 to match body scale
+  collar: 2,    // Reduced from 3
+  cuff: 1.5,    // Reduced from 2.5
+  pocket: 2,    // Reduced from 4
+  placket: 1,   // Reduced from 4
+  bottom: 6     // Adjusted to 6 for balance
 };
 
 
@@ -647,7 +724,8 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
     renderer.domElement.style.zIndex = '1';
 
     // Lighting
-    scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+    // FIXED: Brighter lighting to remove dark shadows
+    scene.add(new THREE.AmbientLight(0xffffff, 1.8));
 
     const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
     keyLight.position.set(3, 5, 5);
@@ -702,9 +780,10 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
             } else {
               const mat = new THREE.MeshStandardMaterial({
                 color: new THREE.Color(partFabrics?.body?.color || '#FFFFFF'),
-                roughness: 0.6,
-                metalness: 0.1,
+                roughness: 0.85,  // FIXED: Higher roughness
+                metalness: 0.0,   // FIXED: No metalness to eliminate dark reflections
                 side: THREE.DoubleSide,
+                flatShading: false, // FIXED: smooth shading
               });
               child.material = mat;
             }
@@ -951,12 +1030,15 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
     }
 
     // Create textures for checkered fabrics (with appropriate repeat scales)
-    const bodyTexture = isCheckered(bodyFabric) ? createCheckTexture(bodyFabric, 4) : null;
-    const sleeveTexture = isCheckered(sleeveFabric) ? createCheckTexture(sleeveFabric, 7) : null;
-    const collarTexture = isCheckered(collarFabric) ? createCheckTexture(collarFabric, 2.5) : null;
-    const cuffTexture = isCheckered(sleeveFabric) ? createCheckTexture(sleeveFabric, 1.8) : null;
-    const pocketTexture = isCheckered(bodyFabric) ? createCheckTexture(bodyFabric, 4) : null;
-    const placketTexture = isCheckered(bodyFabric) ? createCheckTexture(bodyFabric, 4) : null;
+    const CHECK_SIZE = 128; // Higher res
+
+    const bodyTexture = isCheckered(bodyFabric) ? createCheckeredTexture(bodyFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.body) : null;
+    const sleeveTexture = isCheckered(sleeveFabric) ? createCheckeredTexture(sleeveFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.sleeve) : null;
+    const collarTexture = isCheckered(collarFabric) ? createCheckeredTexture(collarFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.collar) : null;
+    const cuffTexture = isCheckered(sleeveFabric) ? createCheckeredTexture(sleeveFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.cuff) : null;
+    const pocketTexture = isCheckered(bodyFabric) ? createCheckeredTexture(bodyFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.pocket) : null;
+    const placketTexture = isCheckered(bodyFabric) ? createCheckeredTexture(bodyFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.placket) : null;
+    const bottomTexture = isCheckered(bodyFabric) ? createCheckeredTexture(bodyFabric.colors, CHECK_SIZE, PATTERN_REPEAT_SCALES.bottom) : null;
 
     // Contrast colors from Color Contrast step (these override part fabrics if set)
     const contrastCollarColor = (selectedContrasts?.['collar-out'] && contrastFabrics?.['collar-out']?.color)
@@ -1064,6 +1146,20 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
           return;
         }
 
+        // BOTTOM/SKIRT - uses bodyFabric but specific scale
+        // Check for 'Bottom_' or 'bottom' in name to catch Kurta parts
+        if (name.includes('bottom') || name.startsWith('bottom_')) {
+          if (bottomTexture) {
+            child.material.map = bottomTexture;
+            child.material.color.set('#FFFFFF');
+          } else {
+            child.material.map = null;
+            child.material.color.set(getFabricColor(bodyFabric));
+          }
+          child.material.needsUpdate = true;
+          return;
+        }
+
         // BODY / MAIN SHIRT PARTS - uses bodyFabric
         if (bodyTexture) {
           child.material.map = bodyTexture;
@@ -1073,6 +1169,9 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
           child.material.color.set(getFabricColor(bodyFabric));
         }
         child.material.needsUpdate = true;
+
+        // DEBUG: Log mesh names to help identify parts if needed
+        // console.log('Mesh:', name, 'Material applied');
       }
     });
   }, [partFabrics, selectedContrasts, contrastFabrics, buttonColor, selectedStyles]);
@@ -1447,8 +1546,563 @@ function ShirtPreview3D({ partFabrics, selectedStyles, selectedContrasts, contra
       )}
     </div>
   );
-}
+}// ============================================
+// 3D ANARKALI KURTI PREVIEW - MESH-BASED CUSTOMIZATION
+// ============================================
+function KurtaPreview3D({ partFabrics, selectedStyles }) {
+  const containerRef = useRef();
+  const kurtaModelRef = useRef();
+  const [isDragging, setIsDragging] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(null);
+  const [modelReady, setModelReady] = useState(false);
+  const startXRef = useRef(0);
+  const startYRef = useRef(0);
+  const rotationXRef = useRef(0);
+  const rotationYRef = useRef(0);
+  const autoRotateRef = useRef(true);
+  const frameRef = useRef();
+  const isDraggingRef = useRef(false);
+  const rendererRef = useRef();
+  const sceneRef = useRef();
+  const cameraRef = useRef();
+  const pivotRef = useRef();
 
+  // Get meshes to show based on selected styles
+  const getMeshesToShow = useCallback(() => {
+    const meshes = new Set();
+
+    // Add neck front mesh
+    if (selectedStyles?.neckFront?.meshName) {
+      meshes.add(selectedStyles.neckFront.meshName);
+      // Also add piping variant if exists
+      meshes.add(selectedStyles.neckFront.meshName + '_piping');
+    }
+
+    // Add neck back mesh
+    if (selectedStyles?.neckBack?.meshName) {
+      meshes.add(selectedStyles.neckBack.meshName);
+      // Also add piping variant if exists
+      meshes.add(selectedStyles.neckBack.meshName + '_piping');
+    }
+
+    // Add sleeve mesh
+    if (selectedStyles?.sleeve?.meshName) {
+      meshes.add(selectedStyles.sleeve.meshName);
+    }
+
+    // Add bottom mesh
+    if (selectedStyles?.bottom?.meshName) {
+      meshes.add(selectedStyles.bottom.meshName);
+    }
+
+    return meshes;
+  }, [selectedStyles]);
+
+  // Update mesh visibility
+  const updateMeshVisibility = useCallback((model) => {
+    if (!model) return;
+
+    const meshesToShow = getMeshesToShow();
+    console.log('Showing meshes:', Array.from(meshesToShow));
+
+    model.traverse((child) => {
+      if (child.isMesh) {
+        // Check if this mesh should be visible
+        const shouldShow = meshesToShow.has(child.name);
+        child.visible = shouldShow;
+      }
+    });
+  }, [getMeshesToShow]);
+
+  // Initialize scene
+  useEffect(() => {
+    if (!containerRef.current) return;
+    if (rendererRef.current) return;
+
+    const scene = new THREE.Scene();
+    sceneRef.current = scene;
+
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      containerRef.current.clientWidth / containerRef.current.clientHeight,
+      0.1,
+      1000
+    );
+    camera.position.set(0, 0, 6);
+    camera.lookAt(0, 0, 0);
+    cameraRef.current = camera;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0x000000, 0);
+    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    containerRef.current.appendChild(renderer.domElement);
+    rendererRef.current = renderer;
+
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.position = 'absolute';
+    renderer.domElement.style.top = '0';
+    renderer.domElement.style.left = '0';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    renderer.domElement.style.zIndex = '1';
+
+    // Lighting - Increased intensity to remove dark shades
+    scene.add(new THREE.AmbientLight(0xffffff, 1.2)); // Increased from 0.9
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    keyLight.position.set(3, 5, 5);
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 0.8); // Increased from 0.6
+    fillLight.position.set(-3, 3, 3);
+    scene.add(fillLight);
+
+    const backLight = new THREE.DirectionalLight(0xffffff, 0.8); // Increased from 0.5
+    backLight.position.set(0, 3, -5);
+    scene.add(backLight);
+
+    const bottomLight = new THREE.DirectionalLight(0xffffff, 0.8); // Increased from 0.3
+    bottomLight.position.set(0, -5, 0);
+    scene.add(bottomLight);
+
+    // Create pivot for rotation
+    const pivot = new THREE.Group();
+    scene.add(pivot);
+    pivotRef.current = pivot;
+
+    // Load kurta model
+    const loader = new GLTFLoader();
+    loader.load(
+      '/models/Kurtha6_no_avatar.glb',
+      (gltf) => {
+        console.log('Anarkali Kurti model loaded!');
+        const model = gltf.scene;
+
+        // Log all mesh names for debugging
+        console.log('=== ANARKALI KURTI MESH NAMES ===');
+        model.traverse((child) => {
+          if (child.isMesh) {
+            console.log('Kurta mesh:', child.name);
+          }
+        });
+        console.log('=================================');
+
+        model.traverse((child) => {
+          if (child.isMesh && child.geometry) {
+            if (child.material) {
+              if (Array.isArray(child.material)) {
+                child.material.forEach(m => m.dispose());
+              } else {
+                child.material.dispose();
+              }
+            }
+
+            // Remove vertex colors from geometry to eliminate dark patches
+            if (child.geometry.attributes.color) {
+              child.geometry.deleteAttribute('color');
+            }
+
+            // Apply default material with proper lighting for visibility
+            const mat = new THREE.MeshStandardMaterial({
+              color: new THREE.Color('#E8E8E8'), // Light gray for visibility
+              roughness: 0.7,
+              metalness: 0.0,
+              side: THREE.DoubleSide,
+            });
+            child.material = mat;
+            child.frustumCulled = false;
+            child.visible = true;
+          }
+        });
+
+        // Calculate bounding box while all meshes are visible
+        const box = new THREE.Box3().setFromObject(model);
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 4.5 / maxDim;
+        model.scale.setScalar(scale);
+
+        model.updateMatrixWorld(true);
+        const newBox = new THREE.Box3().setFromObject(model);
+        const newCenter = newBox.getCenter(new THREE.Vector3());
+        model.position.set(-newCenter.x, -newCenter.y, -newCenter.z);
+
+        // Now hide all meshes
+        model.traverse((child) => {
+          if (child.isMesh) {
+            child.visible = false;
+          }
+        });
+
+        pivot.add(model);
+        kurtaModelRef.current = model;
+
+        // Apply initial visibility based on selected styles
+        updateMeshVisibility(model);
+
+        setIsLoading(false);
+        setModelReady(true);
+      },
+      undefined,
+      (error) => {
+        console.error('Kurta load error:', error);
+        setLoadError('Failed to load kurta model');
+        setIsLoading(false);
+      }
+    );
+
+    // Animation loop
+    const animate = () => {
+      frameRef.current = requestAnimationFrame(animate);
+      if (pivotRef.current && autoRotateRef.current && !isDraggingRef.current) {
+        rotationYRef.current += 0.005;
+        pivotRef.current.rotation.y = rotationYRef.current;
+      }
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Mouse/Touch handlers
+    const onPointerDown = (e) => {
+      isDraggingRef.current = true;
+      setIsDragging(true);
+      autoRotateRef.current = false;
+      const clientX = e.clientX || e.touches?.[0]?.clientX || 0;
+      const clientY = e.clientY || e.touches?.[0]?.clientY || 0;
+      startXRef.current = clientX;
+      startYRef.current = clientY;
+      renderer.domElement.style.cursor = 'grabbing';
+    };
+
+    const onPointerMove = (e) => {
+      if (!isDraggingRef.current || !pivotRef.current) return;
+      const clientX = e.clientX || e.touches?.[0]?.clientX || 0;
+      const clientY = e.clientY || e.touches?.[0]?.clientY || 0;
+
+      const deltaX = clientX - startXRef.current;
+      const deltaY = clientY - startYRef.current;
+
+      rotationYRef.current += deltaX * 0.01;
+      rotationXRef.current += deltaY * 0.01;
+      rotationXRef.current = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, rotationXRef.current));
+
+      pivotRef.current.rotation.y = rotationYRef.current;
+      pivotRef.current.rotation.x = rotationXRef.current;
+
+      startXRef.current = clientX;
+      startYRef.current = clientY;
+    };
+
+    const onPointerUp = () => {
+      isDraggingRef.current = false;
+      setIsDragging(false);
+      renderer.domElement.style.cursor = 'grab';
+    };
+
+    // Zoom with scroll wheel
+    const onWheel = (e) => {
+      e.preventDefault();
+      const zoomSpeed = 0.001;
+      camera.position.z += e.deltaY * zoomSpeed * camera.position.z;
+      camera.position.z = Math.max(3, Math.min(15, camera.position.z));
+    };
+
+    renderer.domElement.addEventListener('mousedown', onPointerDown);
+    renderer.domElement.addEventListener('mousemove', onPointerMove);
+    renderer.domElement.addEventListener('mouseup', onPointerUp);
+    renderer.domElement.addEventListener('mouseleave', onPointerUp);
+    renderer.domElement.addEventListener('touchstart', onPointerDown, { passive: true });
+    renderer.domElement.addEventListener('touchmove', onPointerMove, { passive: true });
+    renderer.domElement.addEventListener('touchend', onPointerUp);
+    renderer.domElement.addEventListener('wheel', onWheel, { passive: false });
+    renderer.domElement.style.cursor = 'grab';
+
+    const onResize = () => {
+      if (!containerRef.current) return;
+      camera.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    };
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      cancelAnimationFrame(frameRef.current);
+      window.removeEventListener('resize', onResize);
+      if (containerRef.current && renderer.domElement) {
+        containerRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+      rendererRef.current = null;
+    };
+  }, []);
+
+  // Update mesh visibility when styles change
+  useEffect(() => {
+    if (kurtaModelRef.current && modelReady) {
+      updateMeshVisibility(kurtaModelRef.current);
+    }
+  }, [selectedStyles, modelReady, updateMeshVisibility]);
+
+  // Update colors based on partFabrics
+  useEffect(() => {
+    if (!kurtaModelRef.current || !modelReady) return;
+
+    // Helper to check if a fabric is checkered
+    const isCheckered = (fab) => fab?.pattern === 'check';
+
+    // Helper to get color from fabric
+    const getFabricColor = (fab) => {
+      if (!fab) return '#FFFFFF';
+      if (fab.pattern === 'check' && fab.colors) return fab.colors[0];
+      return fab.color || '#FFFFFF';
+    };
+
+    // Use SAME repeat scale for ALL parts to ensure consistent pattern
+    const TEXTURE_REPEAT = 4;
+
+    kurtaModelRef.current.traverse((child) => {
+      if (child.isMesh) {
+        const name = child.name.toLowerCase();
+
+        // Determine which fabric to use based on mesh name
+        let fabric = partFabrics?.body; // Default
+
+        if (name.includes('bottom')) {
+          fabric = partFabrics?.skirt || partFabrics?.body;
+        } else if (name.includes('sleeve') || name.includes('arm')) {
+          fabric = partFabrics?.sleeve || partFabrics?.body;
+        } else if (name.includes('neck') || name.includes('collar')) {
+          fabric = partFabrics?.body;
+        }
+
+        // Dispose old material to prevent memory leaks
+        if (child.material) {
+          if (child.material.map) child.material.map.dispose();
+          child.material.dispose();
+        }
+
+        // Apply checkered pattern, image texture, or solid color
+        if (isCheckered(fabric) && fabric.colors) {
+          // Use higher resolution texture for better quality
+          const texture = createCheckeredTexture(fabric.colors, 128, 1);
+          texture.wrapS = THREE.RepeatWrapping;
+          texture.wrapT = THREE.RepeatWrapping;
+
+          // Base scale for consistency
+          let repeatX = 4;
+          let repeatY = 4;
+
+          // IMPORTANT: Check sleeve FIRST before 'short' (because sleeve_*_short contains 'short')
+          if (name.includes('sleeve') || name.includes('arm')) {
+            repeatX = 3.5; // Slightly increased for denser pattern
+            repeatY = 3.5;
+          } else if (name.includes('high_low')) {
+            // High-low skirts have different UV mapping, need higher scale
+            repeatX = 14;
+            repeatY = 14;
+          } else if (name.includes('bottom') || name.includes('skirt') ||
+            name.includes('ankle') || name.includes('floor') ||
+            name.includes('knee') || name.includes('short')) {
+            repeatX = 10;
+            repeatY = 10;
+          }
+
+          texture.repeat.set(repeatX, repeatY);
+
+          child.material = new THREE.MeshStandardMaterial({
+            map: texture,
+            side: THREE.DoubleSide,
+            roughness: 0.7,
+            metalness: 0.0,
+          });
+        } else if (fabric?.image) {
+          // Create material with fabric color first (shown while texture loads)
+          const fabricColor = fabric.color || '#4A235A';
+          child.material = new THREE.MeshStandardMaterial({
+            color: new THREE.Color(fabricColor),
+            side: THREE.DoubleSide,
+            roughness: 0.7,
+            metalness: 0.0,
+          });
+
+          // Load texture asynchronously
+          const textureLoader = new THREE.TextureLoader();
+          textureLoader.load(fabric.image, (tex) => {
+            tex.colorSpace = THREE.SRGBColorSpace;
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.RepeatWrapping;
+
+            // Base scale for consistency
+            let repeatX = 4;
+            let repeatY = 4;
+
+            // IMPORTANT: Check sleeve FIRST before 'short' (because sleeve_*_short contains 'short')
+            if (name.includes('sleeve') || name.includes('arm')) {
+              repeatX = 3.5; // Slightly increased for denser pattern
+              repeatY = 3.5;
+            } else if (name.includes('high_low')) {
+              // High-low skirts have different UV mapping, need higher scale
+              repeatX = 14;
+              repeatY = 14;
+            } else if (name.includes('bottom') || name.includes('skirt') ||
+              name.includes('ankle') || name.includes('floor') ||
+              name.includes('knee') || name.includes('short')) {
+              repeatX = 10;
+              repeatY = 10;
+            }
+
+            tex.repeat.set(repeatX, repeatY);
+            tex.generateMipmaps = true;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            tex.magFilter = THREE.LinearFilter;
+
+            // Update material with loaded texture
+            if (child.material) {
+              child.material.map = tex;
+              child.material.color.set('#FFFFFF'); // Reset color to white so texture shows correctly
+              child.material.needsUpdate = true;
+            }
+          });
+        } else {
+          // Solid color fabric
+          child.material = new THREE.MeshStandardMaterial({
+            color: new THREE.Color(getFabricColor(fabric)),
+            side: THREE.DoubleSide,
+            roughness: 0.7,
+            metalness: 0.0,
+          });
+        }
+      }
+    });
+  }, [partFabrics, modelReady]);
+
+
+  // Reset view function
+  const resetView = useCallback(() => {
+    if (!pivotRef.current || !cameraRef.current) return;
+    autoRotateRef.current = true;
+
+    const startRotY = rotationYRef.current;
+    const startRotX = rotationXRef.current;
+    const startZoom = cameraRef.current.position.z;
+    const startTime = performance.now();
+    const duration = 800;
+
+    const animateReset = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      rotationYRef.current = startRotY * (1 - eased);
+      rotationXRef.current = startRotX * (1 - eased);
+      cameraRef.current.position.z = startZoom + (6 - startZoom) * eased;
+
+      if (pivotRef.current) {
+        pivotRef.current.rotation.y = rotationYRef.current;
+        pivotRef.current.rotation.x = rotationXRef.current;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(animateReset);
+      }
+    };
+
+    requestAnimationFrame(animateReset);
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        background: 'transparent',
+        borderRadius: '16px',
+        overflow: 'hidden',
+      }}
+    >
+      {isLoading && (
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          zIndex: 20,
+        }}>
+          <div style={{
+            width: '48px',
+            height: '48px',
+            border: '3px solid rgba(255,255,255,0.3)',
+            borderTopColor: '#B8860B',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto 16px',
+          }} />
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Loading Anarkali Kurti...</p>
+        </div>
+      )}
+      {loadError && (
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          color: '#ff6b6b',
+          zIndex: 20,
+        }}>
+          <p>⚠️ {loadError}</p>
+        </div>
+      )}
+      {!isLoading && !loadError && (
+        <>
+          <button
+            onClick={resetView}
+            style={{
+              position: 'absolute',
+              top: '15px',
+              right: '15px',
+              background: 'rgba(255,255,255,0.9)',
+              border: 'none',
+              borderRadius: '8px',
+              padding: '8px 12px',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: '600',
+              color: '#333',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+              zIndex: 10,
+            }}
+          >
+            ↻ Reset View
+          </button>
+          <p style={{
+            position: 'absolute',
+            bottom: '20px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontSize: '13px',
+            color: 'rgba(255,255,255,0.8)',
+            textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+            margin: 0,
+            zIndex: 10,
+            textAlign: 'center',
+          }}>
+            {isDragging ? '↔↕ Release to stop' : '↔↕ Drag to rotate • Scroll to zoom'}
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
 
 
 // ============================================
@@ -2102,12 +2756,12 @@ function HomePage({ navigateTo }) {
             <h2 className="section-title-large">Design Your Perfect Fit</h2>
           </div>
           <div className="products-showcase-grid">
-            <div className="showcase-item large" onClick={() => navigateTo('customizer', 'suits')}>
-              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800" alt="Custom Suits" />
+            <div className="showcase-item large" onClick={() => navigateTo('customizer', 'kurta')}>
+              <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800" alt="Anarkali Kurti" />
               <div className="showcase-overlay">
                 <span className="showcase-tag">Most Popular</span>
-                <h3>Custom Suits</h3>
-                <p>From $239</p>
+                <h3>Anarkali Kurti</h3>
+                <p>From $89.99</p>
               </div>
             </div>
             <div className="showcase-item" onClick={() => navigateTo('customizer', 'shirts')}>
@@ -2235,16 +2889,27 @@ function ProductCustomizer({ productType, navigateTo }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedFabric, setSelectedFabric] = useState(fabrics[0]);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedStyleCategory, setSelectedStyleCategory] = useState('sleeve');
-  const [selectedStyles, setSelectedStyles] = useState({
-    sleeve: styleOptions.sleeve[0],
-    front: styleOptions.front[0],
-    back: styleOptions.back[0],
-    bottom: styleOptions.bottom[0],
-    collar: styleOptions.collar[0],
-    cuffs: styleOptions.cuffs[0],
-    pockets: styleOptions.pockets[0],
-  });
+  const [selectedStyleCategory, setSelectedStyleCategory] = useState(
+    productType === 'kurta' ? 'neckFront' : 'sleeve'
+  );
+  const [selectedStyles, setSelectedStyles] = useState(
+    productType === 'kurta'
+      ? {
+        neckFront: kurtaStyleOptions.neckFront[0],
+        neckBack: kurtaStyleOptions.neckBack[0],
+        sleeve: kurtaStyleOptions.sleeve[0],
+        bottom: kurtaStyleOptions.bottom[0],
+      }
+      : {
+        sleeve: styleOptions.sleeve[0],
+        front: styleOptions.front[0],
+        back: styleOptions.back[0],
+        bottom: styleOptions.bottom[0],
+        collar: styleOptions.collar[0],
+        cuffs: styleOptions.cuffs[0],
+        pockets: styleOptions.pockets[0],
+      }
+  );
   const [selectedExtras, setSelectedExtras] = useState({});
 
   // Color Contrast state
@@ -2276,14 +2941,15 @@ function ProductCustomizer({ productType, navigateTo }) {
   const [partFabrics, setPartFabrics] = useState({
     body: fabrics[0],     // Default to first fabric (White)
     sleeve: fabrics[0],   // Default to first fabric
-    collar: fabrics[0]    // Default to first fabric
+    collar: fabrics[0],   // Default to first fabric
+    skirt: fabrics[0]     // Default to first fabric
   });
 
-  const [activePart, setActivePart] = useState('body'); // 'body', 'sleeve', 'collar'
+  const [activePart, setActivePart] = useState('body'); // 'body', 'sleeve', 'collar', 'skirt'
 
   // ADD these helper functions after state declarations:
   const getPartSwatchStyle = (part) => {
-    const fabric = partFabrics[part];
+    const fabric = partFabrics[part] || partFabrics.body;
     if (!fabric) return { backgroundColor: '#fff' };
     if (fabric.image) {
       return { backgroundImage: `url(${fabric.image})`, backgroundSize: 'cover', backgroundPosition: 'center' };
@@ -2295,7 +2961,16 @@ function ProductCustomizer({ productType, navigateTo }) {
   };
 
   const handleFabricSelect = (fabric) => {
-    setPartFabrics(prev => ({ ...prev, [activePart]: fabric }));
+    if (productType === 'kurta' && activePart === 'all') {
+      setPartFabrics({
+        body: fabric,
+        sleeve: fabric,
+        collar: fabric,
+        skirt: fabric
+      });
+    } else {
+      setPartFabrics(prev => ({ ...prev, [activePart]: fabric }));
+    }
   };
 
   const product = productCategories[productType] || productCategories.shirts;
@@ -2352,19 +3027,26 @@ function ProductCustomizer({ productType, navigateTo }) {
             </div>
           </div>
           <div className="preview-3d-area">
-            <ShirtPreview3D
-              partFabrics={partFabrics}
-              selectedStyles={selectedStyles}
-              selectedContrasts={selectedContrasts}
-              contrastFabrics={contrastFabrics}
-              buttonColor={selectedButton}
-              monogram={{
-                position: monogramPosition?.id,
-                text: monogramText,
-                font: monogramFont?.id,
-                color: monogramColor?.color
-              }}
-            />
+            {productType === 'kurta' ? (
+              <KurtaPreview3D
+                partFabrics={partFabrics}
+                selectedStyles={selectedStyles}
+              />
+            ) : (
+              <ShirtPreview3D
+                partFabrics={partFabrics}
+                selectedStyles={selectedStyles}
+                selectedContrasts={selectedContrasts}
+                contrastFabrics={contrastFabrics}
+                buttonColor={selectedButton}
+                monogram={{
+                  position: monogramPosition?.id,
+                  text: monogramText,
+                  font: monogramFont?.id,
+                  color: monogramColor?.color
+                }}
+              />
+            )}
           </div>
 
         </div>
@@ -2411,9 +3093,20 @@ function ProductCustomizer({ productType, navigateTo }) {
                           value={activePart}
                           onChange={(e) => setActivePart(e.target.value)}
                         >
-                          <option value="body">Body</option>
-                          <option value="sleeve">Sleeves</option>
-                          <option value="collar">Collar</option>
+                          {productType === 'kurta' ? (
+                            <>
+                              <option value="all">Whole Garment</option>
+                              <option value="body">Bodice</option>
+                              <option value="skirt">Skirt</option>
+                              <option value="sleeve">Sleeves</option>
+                            </>
+                          ) : (
+                            <>
+                              <option value="body">Body</option>
+                              <option value="sleeve">Sleeves</option>
+                              <option value="collar">Collar</option>
+                            </>
+                          )}
                         </select>
                         <div className="part-selector-swatch" style={getPartSwatchStyle(activePart)} />
                       </div>
@@ -2491,12 +3184,12 @@ function ProductCustomizer({ productType, navigateTo }) {
             {/* STEP 2: STYLE */}
             {currentStep === 2 && (
               <div className="style-step">
-                <div className="step-header"><h2>Customize Style</h2><p>Define every detail of your shirt</p></div>
+                <div className="step-header"><h2>Customize Style</h2><p>Define every detail of your {productType === 'kurta' ? 'kurta' : 'shirt'}</p></div>
                 <div className="style-layout">
                   <div className="style-sidebar">
                     <div className="style-sidebar-section">
-                      <span className="sidebar-section-title">SHIRT</span>
-                      {styleCategories.map(cat => (
+                      <span className="sidebar-section-title">{productType === 'kurta' ? 'KURTA' : 'SHIRT'}</span>
+                      {(productType === 'kurta' ? kurtaStyleCategories : styleCategories).map(cat => (
                         <button key={cat.id} className={`style-category-btn ${selectedStyleCategory === cat.id ? 'active' : ''}`} onClick={() => setSelectedStyleCategory(cat.id)}>
                           <span className="style-indicator">{selectedStyleCategory === cat.id ? '●' : ''}</span>
                           {cat.name.toUpperCase()}
@@ -2506,10 +3199,10 @@ function ProductCustomizer({ productType, navigateTo }) {
                   </div>
                   <div className="style-content">
                     <h3 className="style-section-title">
-                      ▶ {styleCategories.findIndex(c => c.id === selectedStyleCategory) + 1}. CHOOSE YOUR {selectedStyleCategory.toUpperCase()} STYLE
+                      ▶ {(productType === 'kurta' ? kurtaStyleCategories : styleCategories).findIndex(c => c.id === selectedStyleCategory) + 1}. CHOOSE YOUR {selectedStyleCategory.toUpperCase()} STYLE
                     </h3>
                     <div className="style-options-grid">
-                      {styleOptions[selectedStyleCategory]?.map(option => (
+                      {(productType === 'kurta' ? kurtaStyleOptions : styleOptions)[selectedStyleCategory]?.map(option => (
                         <div key={option.id} className={`style-option-card ${selectedStyles[selectedStyleCategory]?.id === option.id ? 'selected' : ''}`} onClick={() => setSelectedStyles(prev => ({ ...prev, [selectedStyleCategory]: option }))}>
                           <div className="style-option-icon" dangerouslySetInnerHTML={{ __html: styleIcons[option.id] || '' }} />
                           {selectedStyles[selectedStyleCategory]?.id === option.id && <span className="style-check">✓</span>}
